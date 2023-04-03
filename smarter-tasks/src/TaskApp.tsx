@@ -23,11 +23,11 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
         </h1>
         <h1 className="text-md mb-6 text-slate-600">
           <span className="font-bold">Project: </span>
-          Graduation Final Year Project (Revamp college website)
+          Get Internship (from GDC)
         </h1>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="container max-w-md mx-auto shadow-md bg-white">
           <div className="border border-slate-200 rounded-xl p-4">
-            <h1 className="text-slate-500 font-bold text-center mb-2">
+            <h1 className="font-bold text-center mb-2">
               Pending
             </h1>
             <TaskForm addTask={this.addTask} />
