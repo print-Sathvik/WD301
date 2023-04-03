@@ -1,4 +1,9 @@
 .TaskItem {
   border-radius: 4px;
-  padding: 10
+  padding: 10;
+  border-color: gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-width: 2px;
+  box-shadow: 10px;
 }
