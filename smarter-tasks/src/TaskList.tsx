@@ -5,19 +5,25 @@ import { TaskItem } from "./types";
 interface Props {
   tasks: TaskItem[];
 }
-interface State {
-}
+interface State {}
 
 class TaskList extends React.Component<Props, State> {
-  constructor(props:Props) {
-    super(props)
+  constructor(props: Props) {
+    super(props);
     this.state = {
-      tasks: []
-    }
+      tasks: [],
+    };
   }
 
   render() {
-    return this.props.tasks.map((task, idx) => <Task key={idx} title={task.title} description={task.description} dueDate={task.dueDate} />);
+    return this.props.tasks.map((task, idx) => (
+      <Task
+        key={idx}
+        title={task.title}
+        description={task.description}
+        dueDate={task.dueDate}
+      />
+    ));
   }
 }
 

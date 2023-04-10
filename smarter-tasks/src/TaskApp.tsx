@@ -27,9 +27,7 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
         </h1>
         <div className="container max-w-md mx-auto shadow-md bg-white">
           <div className="border border-slate-200 rounded-xl p-4">
-            <h1 className="font-bold text-center mb-2">
-              Pending
-            </h1>
+            <h1 className="font-bold text-center mb-2">Pending</h1>
             <TaskForm addTask={this.addTask} />
             <TaskList tasks={this.state.tasks} />
           </div>
@@ -42,10 +40,9 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
     this.setState((state, props) => {
       return {
         tasks: [...state.tasks, task],
-      }
-    })
-  }
-  
+      };
+    });
+  };
 }
 
 export default TaskApp;
