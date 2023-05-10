@@ -4,27 +4,28 @@ import { TaskItem } from "./types";
 
 interface Props {
   tasks: TaskItem[];
+  deleteTasks: (id: number) => void;
 }
-interface State {}
 
-class TaskList extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      tasks: [],
-    };
-  }
-
-  render() {
-    return this.props.tasks.map((task, idx) => (
+const TaskList = (props: Props) => {
+  const list = props.tasks.map((task, idx) => (
+    <li key={idx}>
       <Task
         key={idx}
         title={task.title}
         description={task.description}
         dueDate={task.dueDate}
       />
-    ));
-  }
-}
+      <button
+        className="deleteTaskButton p-2 rounded bg-red-600 text-white font-bold"
+        id="deleteTaskButton"
+        onClick={(_) => props.deleteTasks(idx)}
+      >
+        Delete
+      </button>
+    </li>
+  ));
+  return <>{list}</>;
+};
 
 export default TaskList;
