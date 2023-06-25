@@ -11,6 +11,7 @@ const TaskList = (props: Props) => {
   const list = props.tasks.map((task, idx) => (
     <li key={idx}>
       <Task
+        id={String(idx)}
         key={idx}
         title={task.title}
         description={task.description}
