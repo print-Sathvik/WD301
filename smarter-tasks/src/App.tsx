@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-import { NotFound } from "./NotFound";
+import { NotFound } from "./pages/Notfound";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin/SigninForm";
 import { ProtectedRoute } from "./ProtectedRoute";
