@@ -1,37 +1,25 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-
-import Header from "./Header";
-import HomePage from "./HomePage";
-import TaskApp from "./TaskApp";
-import TaskDetailsPage from "./TaskDetailsPage";
-import Signin from "./Signin";
-import { ProtectedRoute } from "./ProtectedRoute";
 import { NotFound } from "./NotFound";
-import { WrongPageHandler } from "./WrongPageHandler";
+import Signup from "./pages/signup";
+import Signin from "./pages/signin/SigninForm";
+import { ProtectedRoute } from "./ProtectedRoute";
+import Dashboard from "./pages/dashboard";
 
 function App() {
-  const location = useLocation();
-
   return (
     <div>
-      {location.pathname !== "/signin" && location.pathname !== "/notfound" && (
-        <Header />
-      )}
       <Routes>
-        <Route path="/" element={<ProtectedRoute element={<HomePage />} />} />
-        <Route
-          path="/tasks"
-          element={<ProtectedRoute element={<TaskApp />} />}
-        />
-        <Route
-          path="/tasks/:id"
-          element={<ProtectedRoute element={<TaskDetailsPage />} />}
-        />
+        <Route path="/" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
+        <Route
+          path="/dashboard"
+          element={<ProtectedRoute element={<Dashboard />} />}
+        />
         <Route path="/notfound" element={<NotFound />} />
-        <Route path="/:string" element={<WrongPageHandler />} />
+        <Route path="*" element={<Navigate to="/notfound" />} />
       </Routes>
     </div>
   );

@@ -18,7 +18,12 @@ const TaskApp = (props: TaskAppProp) => {
   );
 
   const addTask = (task: TaskItem) => {
-    setTaskAppState({ tasks: [...taskAppState.tasks, {...task, id:String(new Date().getTime())}] });
+    setTaskAppState({
+      tasks: [
+        ...taskAppState.tasks,
+        { ...task, id: String(new Date().getTime()) },
+      ],
+    });
   };
 
   const deleteTasks = (id: number) => {
