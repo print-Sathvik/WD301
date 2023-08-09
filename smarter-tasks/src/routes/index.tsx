@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/notfound",
-    element: <NotFound />
+    element: <NotFound />,
   },
   // Protected Routes
   {

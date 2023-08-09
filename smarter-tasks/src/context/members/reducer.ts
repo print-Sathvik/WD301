@@ -17,7 +17,8 @@ export type MembersActions =
   | { type: "FETCH_MEMBERS_REQUEST" }
   | { type: "FETCH_MEMBERS_SUCCESS"; payload: Member[] }
   | { type: "FETCH_MEMBERS_FAILURE"; payload: string }
-  | { type: "ADD_MEMBER_SUCCESS"; payload: Member };
+  | { type: "ADD_MEMBER_SUCCESS"; payload: Member }
+  | { type: "DELETE_MEMBER_SUCCESS"; payload: string };
 
 export const reducer = (
   state: MembersState = initialState,
@@ -44,6 +45,13 @@ export const reducer = (
       };
     case "ADD_MEMBER_SUCCESS":
       return { ...state, members: [...state.members, action.payload] };
+    case "DELETE_MEMBER_SUCCESS":
+      return {
+        ...state,
+        members: state.members.filter(
+          (member: any) => member.id !== action.payload
+        ),
+      };
     default:
       return state;
   }
