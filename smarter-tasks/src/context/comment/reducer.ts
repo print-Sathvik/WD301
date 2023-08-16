@@ -14,9 +14,9 @@ export const initialState: CommentListState = {
   errorMessage: "",
 };
 
-export const commentReducer: Reducer<CommentListState, CommentActions> = (
+export const commentReducer: any = (
   state = initialState,
-  action
+  action: any
 ) => {
   switch (action.type) {
     case CommentListAvailableAction.FETCH_COMMENTS_REQUEST:

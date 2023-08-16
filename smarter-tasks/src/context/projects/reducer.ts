@@ -1,5 +1,7 @@
-import { Project } from "../../pages/projects/ProjectList";
-
+interface Project {
+  id: number;
+  name: string;
+}
 export const initialState: ProjectsState = {
   projects: [],
   isLoading: false,

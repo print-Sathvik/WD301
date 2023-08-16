@@ -9,7 +9,7 @@ export const CommentsProvider: React.FC<React.PropsWithChildren> = ({
   // Create a state and dispatch with `useReducer` passing in the `taskReducer` and an initial state. Pass these as values to our contexts.
   const [state, dispatch] = useReducer(commentReducer, initialState);
   return (
-    <CommentsStateContext.Provider value={state}>
+    <CommentsStateContext.Provider value={state as CommentListState}>
       <CommentsDispatchContext.Provider value={dispatch}>
         {children}
       </CommentsDispatchContext.Provider>
